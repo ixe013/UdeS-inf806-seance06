@@ -5,8 +5,7 @@ do
   REPLY="r"
   while [ "${REPLY}" == "r" ]; do
     asciinema play -i 1 ${recording}
+    read -n1 -s REPLY
     unset REPLY
-    read -n1 -p "$(tput blink).$(tput sgr0)" -s REPLY
-    printf "\b \n"
   done
 done
